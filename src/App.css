@@ -1,0 +1,164 @@
+/* Barra superior principal */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  background: #23232a;
+  padding: 1.2rem 2rem 1.1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.top-bar-content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.buscador-input {
+  width: 320px;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  background: #28283c;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 2px 7px #12122a30;
+  margin: 0 auto;
+  display: block;
+}
+
+.favoritos-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #9263de;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  padding: 0.65rem 1.3rem;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.favoritos-btn:hover {
+  background: #c792f7;
+}
+
+.star-fav-btn {
+  width: calc(100% - 34px); /* Ocupa casi todo el ancho, ajusta el 34px para los bordes del modal */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Esto separa texto e icono a los bordes del botón */
+  background: #9263de;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 1.07em;
+  margin: 1.5rem auto 0.8rem auto; /* Márgenes arriba/abajo, centrado horizontal */
+  box-shadow: 0 2px 10px #0002;
+  transition: background 0.14s, transform 0.12s;
+}
+
+.star-fav-btn:hover {
+  background: #b38bf7;
+  transform: scale(1.035);
+}
+
+.star-fav-btn svg {
+  margin-left: 1.2em; /* Por si quieres aún más espacio entre texto e icono */
+  flex-shrink: 0;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #eee;
+  cursor: pointer;
+  padding: 0.2em;
+  z-index: 10;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.18s;
+}
+
+.modal-close-btn:hover {
+  color: #e84848;
+}
+
+/* Resultados debajo de la barra */
+.resultados-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.2rem;
+  padding-top: 80px;
+  padding-bottom: 2rem;
+}
+
+.series-list {
+  width: 100%;
+  max-width: 950px;
+}
+
+ul {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a1d;
+}
+
+.modalOverlay {
+  background: rgba(18, 18, 22, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalDescripcion {
+  background: #232326;
+  border-radius: 14px;
+  box-shadow: 0 0 18px #0008;
+  padding: 2.5rem 1.7rem 1.7rem 1.7rem;
+  width: 95%;
+  max-width: 420px;
+  max-height: 96vh;
+  overflow-y: auto;
+  color: #fff;
+  position: relative;
+  /* El centrado se garantiza por el padre flex */
+  left: unset;
+  top: unset;
+  right: unset;
+  bottom: unset;
+  margin: 0; /* Quita márgenes automáticos */
+}
